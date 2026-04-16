@@ -93,7 +93,6 @@
 function copyUPI() {
   const text = document.getElementById("upiText").innerText;
   navigator.clipboard.writeText(text);
-  alert("UPI ID copied!");
 }
 </script>
 <body>
@@ -112,6 +111,10 @@ function copyUPI() {
    </div>
   </div>
   <a class="upi-btn" href="upi://pay?pa=MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.easypay@icici&pn=ShreeMadhavGauUpchar">
+    💰 Pay via UPI
+  </a>
+  <a class="upi-btn" 
+    href="upi://pay?pa=YOUR-UPI-ID@bank&pn=Shree%20Madhav%20Gau%20Upchar&cu=INR">
     💰 Pay via UPI
   </a>
 
