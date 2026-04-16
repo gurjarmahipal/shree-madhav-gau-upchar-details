@@ -30,8 +30,12 @@
 
     .logo {
       width: 110px;
+      height: 110px;
       border-radius: 50%;
-      margin-bottom: 10px;
+      object-fit: cover;
+      border: 4px solid #000;   /* clean circular border */
+      padding: 2px;
+      background: white;
     }
 
     h1 {
@@ -49,10 +53,11 @@
     .icons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
       margin: 20px 0;
     }
-
     .icon {
       width: 60px;
       height: 60px;
@@ -70,7 +75,6 @@
     .youtube { background: #FF0000; }
     .facebook { background: #1877F2; }
     .instagram { background: #E1306C; }
-    .map { background: #ff9800; }
     .center {
       background: #fff;
       color: #000;
@@ -116,10 +120,6 @@
 
     <a class="icon youtube" href="https://youtube.com/@shreemadhavgauupchar?si=rdgeQqr_9s1T6xdX">
       <i class="fab fa-youtube"></i>
-    </a>
-
-    <a class="icon map" href="https://maps.app.goo.gl/ekmX2Z5gZvruHmpU6?g_st=ac">
-      <i class="fas fa-map-marker-alt"></i>
     </a>
 
     <a class="icon instagram" href="https://www.instagram.com/shree_madhav_gau_upchar_?igsh=MWt3NndoODg4eDZrdA==">
