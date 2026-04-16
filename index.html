@@ -28,14 +28,14 @@
       border: 2px solid #f2c38b;
     }
 
-    /* ✅ PERFECT LOGO BORDER FIX */
+    /* ✅ CLEAN LOGO (NO DOUBLE LOOK) */
     .logo-wrapper {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: #000; /* outer black */
-      padding: 5px;
       margin: auto;
+      background: #000; /* outer black */
+      padding: 3px; /* thinner */
     }
 
     .logo-inner {
@@ -43,8 +43,7 @@
       height: 100%;
       border-radius: 50%;
       background: #fff; /* white ring */
-      padding: 4px;
-      box-sizing: border-box;
+      padding: 3px;
     }
 
     .logo-inner img {
@@ -66,7 +65,6 @@
       font-size: 18px;
     }
 
-    /* ✅ PERFECT GRID FIX */
     .icons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -96,7 +94,6 @@
       background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
     }
 
-    /* ✅ CENTER BUTTON */
     .center {
       background: #fff;
       color: #000;
@@ -107,9 +104,9 @@
       height: 70px;
     }
 
-    /* FIX EMPTY SPACE ALIGNMENT */
-    .empty {
-      visibility: hidden;
+    /* 🔥 CUSTOM SHIFT (IMPORTANT FIX) */
+    .shift-left {
+      transform: translateX(-15px);
     }
 
     .bottom-btn {
@@ -131,7 +128,7 @@
 
 <div class="card">
 
-  <!-- ✅ LOGO WITH DOUBLE RING -->
+  <!-- LOGO -->
   <div class="logo-wrapper">
     <div class="logo-inner">
       <img src="Logo.jpg">
@@ -156,12 +153,12 @@
       <i class="fab fa-youtube"></i>
     </a>
 
-    <!-- Row 2 (perfect centering fix) -->
-    <div class="empty"></div>
-
-    <a class="icon instagram" href="https://www.instagram.com/shree_madhav_gau_upchar_?igsh=MWt3NndoODg4eDZrdA==">
+    <!-- Row 2 -->
+    <div class="icon instagram shift-left" href="https://www.instagram.com/shree_madhav_gau_upchar_?igsh=MWt3NndoODg4eDZrdA==">
       <i class="fab fa-instagram"></i>
-    </a>
+    </div>
+
+    <div></div>
 
     <a class="icon facebook" href="https://www.facebook.com/share/1HxxBmuwdZ/">
       <i class="fab fa-facebook-f"></i>
