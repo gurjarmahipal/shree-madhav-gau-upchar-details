@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>श्री माधव गौ उपचार</title></title>
+  <title>श्री माधव गौ उपचार केंद्र</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Icons -->
@@ -28,69 +28,81 @@
       border: 2px solid #f2c38b;
     }
 
+    /* ✅ FIXED LOGO (no double border) */
     .logo {
       width: 110px;
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #000;   /* clean circular border */
-      padding: 2px;
       background: white;
     }
 
     h1 {
       color: red;
       margin: 5px;
-      font-size: 28px;
+      font-size: 26px;
     }
 
     h2 {
       color: brown;
       margin: 5px;
-      font-size: 20px;
+      font-size: 18px;
     }
 
+    /* ✅ BETTER LAYOUT */
     .icons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
       justify-items: center;
-      align-items: center;
-      margin: 20px 0;
+      margin: 25px 0;
     }
+
     .icon {
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 24px;
+      font-size: 26px;
       color: white;
       text-decoration: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     .whatsapp { background: #25D366; }
     .youtube { background: #FF0000; }
     .facebook { background: #1877F2; }
-    .instagram { background: #E1306C; }
+    .instagram { 
+      background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
+    }
+
+    /* ✅ CENTER BUTTON PERFECT */
     .center {
       background: #fff;
       color: #000;
       border: 2px solid #f2c38b;
       font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Make center bigger */
+    .center {
+      width: 70px;
+      height: 70px;
     }
 
     .bottom-btn {
-      margin-top: 20px;
-      padding: 12px;
+      margin-top: 25px;
+      padding: 14px;
       border-radius: 30px;
-      background: orange;
+      background: linear-gradient(to right, #ff9800, #ff7a00);
       color: white;
       text-decoration: none;
       display: block;
       font-weight: bold;
+      font-size: 16px;
     }
 
   </style>
@@ -110,17 +122,19 @@
   <!-- ICONS -->
   <div class="icons">
 
+    <!-- Row 1 -->
     <a class="icon whatsapp" href="https://wa.me/qr/R7KT3YUXJET7H1">
       <i class="fab fa-whatsapp"></i>
     </a>
 
-    <a class="icon center" href="#">
-      Connect
-    </a>
+    <div class="icon center">Connect</div>
 
     <a class="icon youtube" href="https://youtube.com/@shreemadhavgauupchar?si=rdgeQqr_9s1T6xdX">
       <i class="fab fa-youtube"></i>
     </a>
+
+    <!-- Row 2 -->
+    <div></div>
 
     <a class="icon instagram" href="https://www.instagram.com/shree_madhav_gau_upchar_?igsh=MWt3NndoODg4eDZrdA==">
       <i class="fab fa-instagram"></i>
