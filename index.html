@@ -28,11 +28,21 @@
       border: 2px solid #f2c38b;
     }
 
+    /* ✅ LOGO FIX (black + white ring) */
+    .logo-wrapper {
+      width: 120px;
+      height: 120px;
+      margin: auto;
+      border-radius: 50%;
+      background: white;
+      padding: 3px;
+    }
+
     .logo-inner {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: #fff; /* white ring */
+      background: white;
       padding: 3px;
     }
 
@@ -94,6 +104,11 @@
       height: 70px;
     }
 
+    /* Slight left shift for Instagram */
+    .shift-left {
+      transform: translateX(-15px);
+    }
+
     .bottom-btn {
       margin-top: 25px;
       padding: 14px;
@@ -114,8 +129,10 @@
 <div class="card">
 
   <!-- LOGO -->
-  <div class="logo-inner">
-    <img src="Logo.jpg">
+  <div class="logo-wrapper">
+    <div class="logo-inner">
+      <img src="Logo.jpg">
+    </div>
   </div>
 
   <!-- TITLE -->
@@ -137,9 +154,9 @@
     </a>
 
     <!-- Row 2 -->
-    <div class="icon instagram" href="https://www.instagram.com/shree_madhav_gau_upchar_?igsh=MWt3NndoODg4eDZrdA==">
+    <a class="icon instagram shift-left" href="https://www.instagram.com/shree_madhav_gau_upchar_?igsh=MWt3NndoODg4eDZrdA==">
       <i class="fab fa-instagram"></i>
-    </div>
+    </a>
 
     <div></div>
 
