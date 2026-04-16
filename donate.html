@@ -51,6 +51,34 @@
       font-weight: bold;
     }
 
+    .upi-box {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background: #f1f1f1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .upi-box span {
+      word-break: break-all;   /* ✅ multiline wrap */
+      font-size: 13px;
+      text-align: left;
+      flex: 1;
+    }
+
+    .upi-box button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 6px;
+      background: #ff7a00;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
     .back-btn {
       margin-top: 15px;
       display: block;
@@ -61,7 +89,13 @@
 
   </style>
 </head>
-
+<script>
+function copyUPI() {
+  const text = document.getElementById("upiText").innerText;
+  navigator.clipboard.writeText(text);
+  alert("UPI ID copied!");
+}
+</script>
 <body>
 
 <div class="card">
@@ -70,11 +104,14 @@
 
   <!-- UPI SECTION -->
   <div class="section">
-    <strong>UPI ID:</strong><br>
-    MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.easypay@icici
-  </div>
+   <strong>UPI ID:</strong>
 
-  <a class="upi-btn" href="upi://pay?pa=YOUR-UPI-ID@upi&pn=ShreeMadhavGauUpchar">
+   <div class="upi-box">
+    <span id="upiText">MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.easypay@icici</span>
+    <button onclick="copyUPI()">Copy</button>
+   </div>
+  </div>
+  <a class="upi-btn" href="upi://pay?pa=MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.easypay@icici&pn=ShreeMadhavGauUpchar">
     💰 Pay via UPI
   </a>
 
