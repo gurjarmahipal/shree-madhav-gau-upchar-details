@@ -94,6 +94,20 @@ function copyUPI() {
   const text = document.getElementById("upiText").innerText;
   navigator.clipboard.writeText(text);
 }
+
+function payNow() {
+    const upiId = "MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici";
+    const name = "Shree Madhav Gau Upchar";
+    const note = "Donation";
+
+    const upiUrl =
+        `upi://pay?pa=${encodeURIComponent(upiId)}` +
+        `&pn=${encodeURIComponent(name)}` +
+        `&tn=${encodeURIComponent(note)}` +
+        `&cu=INR`;
+
+    window.location.href = upiUrl;
+}
 </script>
 <body>
 
@@ -110,8 +124,7 @@ function copyUPI() {
     <button onclick="copyUPI()">Copy</button>
    </div>
   </div>
-  <a class="upi-btn" 
-    href="upi://pay?pa=MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay%40icici&pn=Shree%20Madhav%20Gau%20Upchar&cu=INR">
+  <a class="upi-btn" onclick="payNow()">
     💰 Pay via UPI
   </a>
 
