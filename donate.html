@@ -49,6 +49,7 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
 
     .upi-box {
@@ -63,7 +64,7 @@
     }
 
     .upi-box span {
-      word-break: break-all;   /* ✅ multiline wrap */
+      word-break: break-all;
       font-size: 13px;
       text-align: left;
       flex: 1;
@@ -86,78 +87,83 @@
       text-decoration: none;
       font-weight: bold;
     }
-
   </style>
 </head>
-<script>
-function copyUPI() {
-  const text = document.getElementById("upiText").innerText;
-  navigator.clipboard.writeText(text);
-}
 
-function payNow() {
-    const upiId = "MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici";
-    const name = "Shree Madhav Gau Upchar";
-    const note = "Donation";
-
-    const upiUrl =
-        `upi://pay?pa=${encodeURIComponent(upiId)}` +
-        `&pn=${encodeURIComponent(name)}` +
-        `&tn=${encodeURIComponent(note)}` +
-        `&cu=INR`;
-
-    window.location.href = upiUrl;
-}
-  
-document.getElementById("payBtn")
-.addEventListener("click", function (e) {
-
-    e.preventDefault();
-
-    const upiId =
-    "MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici";
-
-    const url =
-    `upi://pay?pa=${encodeURIComponent(upiId)}
-    &pn=${encodeURIComponent("M S SHREE MADHAV GOV UPCHAR SAMITI GULABPURA")}
-    &tn=${encodeURIComponent("Donation")}
-    &cu=INR`
-    .replace(/\s+/g, "");
-
-    window.open(url, "_self");
-});
-</script>
 <body>
 
 <div class="card">
 
   <h1>❤️ Donate & Support</h1>
 
-  <!-- UPI SECTION -->
   <div class="section">
-   <strong>UPI ID:</strong>
+    <strong>UPI ID:</strong>
 
-   <div class="upi-box">
-    <span id="upiText">MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici</span>
-    <button onclick="copyUPI()">Copy</button>
-   </div>
+    <div class="upi-box">
+      <span id="upiText">
+        MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici
+      </span>
+
+      <button onclick="copyUPI()">Copy</button>
+    </div>
   </div>
-  
+
   <a class="upi-btn" id="payBtn">
     💰 Pay via UPI
   </a>
 
-  <!-- BANK DETAILS -->
   <div class="section">
     <strong>Bank Name:</strong> ICICI Bank<br>
-    <strong>Account Name:</strong> M/S.SHREE MADHAV GOV UPCHAR SAMITI GULABPURA<br>
+    <strong>Account Name:</strong>
+    M/S.SHREE MADHAV GOV UPCHAR SAMITI GULABPURA<br>
     <strong>Account No:</strong> 667401702498<br>
     <strong>IFSC:</strong> ICIC0006674
   </div>
 
-  <a class="back-btn" href="index.html">⬅ Back</a>
+  <a class="back-btn" href="index.html">
+    ⬅ Back
+  </a>
 
 </div>
+
+<script>
+function copyUPI() {
+    const text =
+      document.getElementById("upiText")
+      .innerText
+      .trim();
+
+    navigator.clipboard.writeText(text);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document
+    .getElementById("payBtn")
+    .addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const upiId =
+        "MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici";
+
+        const params = new URLSearchParams({
+            pa: upiId,
+            pn: "M S SHREE MADHAV GOV UPCHAR SAMITI GULABPURA",
+            tn: "Donation",
+            am: "1",
+            cu: "INR"
+        });
+
+        const upiUrl =
+          "upi://pay?" + params.toString();
+
+        console.log(upiUrl);
+
+        window.location.href = upiUrl;
+    });
+});
+</script>
 
 </body>
 </html>
