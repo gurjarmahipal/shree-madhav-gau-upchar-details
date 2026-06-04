@@ -108,6 +108,24 @@ function payNow() {
 
     window.location.href = upiUrl;
 }
+  
+document.getElementById("payBtn")
+.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    const upiId =
+    "MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici";
+
+    const url =
+    `upi://pay?pa=${encodeURIComponent(upiId)}
+    &pn=${encodeURIComponent("M S SHREE MADHAV GOV UPCHAR SAMITI GULABPURA")}
+    &tn=${encodeURIComponent("Donation")}
+    &cu=INR`
+    .replace(/\s+/g, "");
+
+    window.open(url, "_self");
+});
 </script>
 <body>
 
@@ -124,7 +142,8 @@ function payNow() {
     <button onclick="copyUPI()">Copy</button>
    </div>
   </div>
-  <a class="upi-btn" onclick="payNow()">
+  
+  <a class="upi-btn" id="payBtn">
     💰 Pay via UPI
   </a>
 
