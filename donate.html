@@ -108,10 +108,6 @@
     </div>
   </div>
 
-  <a class="upi-btn" id="payBtn">
-    💰 Pay via UPI
-  </a>
-
   <div class="section">
     <strong>Bank Name:</strong> ICICI Bank<br>
     <strong>Account Name:</strong>
@@ -135,32 +131,6 @@ function copyUPI() {
 
     navigator.clipboard.writeText(text);
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    document
-    .getElementById("payBtn")
-    .addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        const upiId = "msshreemadhavgovupcharsamitigulabpura.eazypay@icici";
-        const params = new URLSearchParams({
-            pa: upiId,
-            pn: "M S SHREE MADHAV GOV UPCHAR SAMITI GULABPURA",
-            tn: "Donation",
-            am: "1",
-            cu: "INR"
-        });
-
-        const upiUrl =
-          "upi://pay?" + params.toString();
-
-        console.log(upiUrl);
-
-        window.location.href = upiUrl;
-    });
-});
 </script>
 
 </body>
