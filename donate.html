@@ -157,14 +157,6 @@ function copyUPI() {
     .getElementById("upiText")
     .innerText
     .trim();
-
-  navigator.clipboard.writeText(upi)
-    .then(() => {
-      alert("UPI ID copied successfully!");
-    })
-    .catch(() => {
-      alert("Failed to copy UPI ID");
-    });
 }
 </script>
 
