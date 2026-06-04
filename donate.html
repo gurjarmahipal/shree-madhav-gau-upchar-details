@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donate - श्री माधव गौ उपचार</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: #f4f4f4;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 15px;
     }
 
     .card {
@@ -28,33 +30,28 @@
     h1 {
       color: red;
       font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
     }
 
     .section {
       margin: 20px 0;
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #fafafa;
       border: 1px solid #ddd;
       text-align: left;
       font-size: 14px;
     }
 
-    .upi-btn {
-      display: block;
-      margin-top: 15px;
-      padding: 12px;
-      border-radius: 25px;
-      background: #28a745;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
     .upi-box {
       margin-top: 10px;
-      padding: 10px;
+      padding: 12px;
       border-radius: 10px;
       background: #f1f1f1;
       display: flex;
@@ -70,22 +67,34 @@
       flex: 1;
     }
 
-    .upi-box button {
-      padding: 6px 10px;
+    .copy-btn {
+      padding: 8px 12px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       background: #ff7a00;
       color: white;
       font-size: 12px;
+      font-weight: bold;
       cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      opacity: 0.9;
     }
 
     .back-btn {
       margin-top: 15px;
-      display: block;
+      display: inline-block;
       color: #ff7a00;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #555;
+      margin-top: 10px;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -96,7 +105,13 @@
 
   <h1>❤️ Donate & Support</h1>
 
+  <div class="subtitle">
+    Your contribution helps us serve गौ माता 🙏
+  </div>
+
+  <!-- UPI SECTION -->
   <div class="section">
+
     <strong>UPI ID:</strong>
 
     <div class="upi-box">
@@ -104,16 +119,29 @@
         MSSHREEMADHAVGOVUPCHARSAMITIGULABPURA.eazypay@icici
       </span>
 
-      <button onclick="copyUPI()">Copy</button>
+      <button class="copy-btn"
+              onclick="copyUPI()">
+        Copy
+      </button>
     </div>
+
+    <div class="note">
+      Copy the UPI ID and pay using PhonePe, Google Pay, Paytm, or any UPI app.
+    </div>
+
   </div>
 
+  <!-- BANK DETAILS -->
   <div class="section">
-    <strong>Bank Name:</strong> ICICI Bank<br>
-    <strong>Account Name:</strong>
-    M/S.SHREE MADHAV GOV UPCHAR SAMITI GULABPURA<br>
+
+    <strong>Bank Name:</strong> ICICI Bank<br><br>
+
+    <strong>Account Name:</strong><br>
+    M/S.SHREE MADHAV GOV UPCHAR SAMITI GULABPURA<br><br>
+
     <strong>Account No:</strong> 667401702498<br>
     <strong>IFSC:</strong> ICIC0006674
+
   </div>
 
   <a class="back-btn" href="index.html">
@@ -124,12 +152,19 @@
 
 <script>
 function copyUPI() {
-    const text =
-      document.getElementById("upiText")
-      .innerText
-      .trim();
 
-    navigator.clipboard.writeText(text);
+  const upi = document
+    .getElementById("upiText")
+    .innerText
+    .trim();
+
+  navigator.clipboard.writeText(upi)
+    .then(() => {
+      alert("UPI ID copied successfully!");
+    })
+    .catch(() => {
+      alert("Failed to copy UPI ID");
+    });
 }
 </script>
 
