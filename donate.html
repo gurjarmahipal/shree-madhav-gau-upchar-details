@@ -152,11 +152,8 @@
 
 <script>
 function copyUPI() {
-
-  const upi = document
-    .getElementById("upiText")
-    .innerText
-    .trim();
+  const upi = document.getElementById("upiText").innerText.trim();
+  navigator.clipboard.writeText(upi);
 }
 </script>
 
